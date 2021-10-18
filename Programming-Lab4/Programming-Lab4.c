@@ -9,10 +9,11 @@ int main()
 {
 	srand(time(NULL));
 
-	int size;
-	printf("Enter size:\n");
-	scanf_s("%d", &size);
+	int n;
+	printf("Enter n:\n");
+	scanf_s("%d", &n);
 
+	int size = n * 2;
 	double* a = calloc(size, sizeof(double));
 	double scale = (double)(RAND_MAX_BOUND - RAND_MIN_BOUND) / RAND_MAX;
 
@@ -22,8 +23,6 @@ int main()
 		a[i] = rand() * scale + RAND_MIN_BOUND;
 		printf("%lf ", a[i]);
 	}
-
-	int n = size / 2 + size % 2;
 
 	printf("\nresult: ");
 	for (int i = 0, j = size - 1; i < n; i++, j--)
